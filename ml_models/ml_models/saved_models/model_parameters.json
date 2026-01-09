@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "model_version": "2.0",
+    "training_samples": 5,
+    "feature_names": [
+      "current_gpa",
+      "course_difficulty",
+      "attendance_rate",
+      "has_disability",
+      "credits"
+    ],
+    "trained_at": "2026-01-09T10:35:49.317192"
+  },
+  "logistic_regression": {
+    "coefficients": [
+      -0.5587669517873212,
+      -0.08025340247969329,
+      -0.289888386744889,
+      -0.14231735201021198,
+      0.253833169287856
+    ],
+    "intercept": -0.18003587991842895,
+    "classes": [
+      0,
+      1
+    ]
+  },
+  "random_forest_classifier": {
+    "n_estimators": 200,
+    "feature_importances": [
+      0.47890723550816483,
+      0.10306614732024301,
+      0.33494489155632995,
+      0.05078554518600674,
+      0.03229618042925544
+    ],
+    "max_depth": 15
+  },
+  "gradient_boosting_classifier": {
+    "n_estimators": 100,
+    "learning_rate": 0.05,
+    "max_depth": 5
+  },
+  "random_forest_regressor": {
+    "n_estimators": 200,
+    "feature_importances": [
+      0.33312366956554024,
+      0.09340589653613025,
+      0.49641197780576984,
+      0.041247294629110566,
+      0.035811161463449044
+    ],
+    "max_depth": 15
+  }
+}

@@ -14,6 +14,16 @@ import os
 from typing import Dict
 from data_preprocessing import DataPreprocessor
 
+class NpEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super(NpEncoder, self).default(obj)
+
 class CourseRecommender:
     def __init__(self):
         self.preprocessor = DataPreprocessor()
@@ -261,7 +271,7 @@ class CourseRecommender:
         }
 
         with open('ml_models/saved_models/recommendation_parameters.json', 'w') as f:
-            json.dump(params, f, indent=2)
+            json.dump(params, f, indent=2, cls=NpEncoder)
 
         print("Recommendation model parameters exported successfully!")
         print(f"Parameters saved to: ml_models/saved_models/recommendation_parameters.json")

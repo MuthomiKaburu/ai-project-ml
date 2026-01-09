@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "model_version": "2.0",
+    "feature_names": [
+      "GPA",
+      "Difficulty",
+      "Disability",
+      "Credits",
+      "Avg Grade"
+    ],
+    "trained_at": "2026-01-09T11:03:05.329063"
+  },
+  "knn": {
+    "n_neighbors": 5,
+    "weights": "distance",
+    "metric": "euclidean"
+  },
+  "decision_tree": {
+    "max_depth": 8,
+    "n_features": 5,
+    "n_classes": 2,
+    "feature_importances": [
+      0.25428436559837975,
+      0.20270228194565265,
+      0.029291965758809182,
+      0.017012662106616873,
+      0.49670872459054166
+    ],
+    "feature_names": [
+      "GPA",
+      "Difficulty",
+      "Disability",
+      "Credits",
+      "Avg Grade"
+    ],
+    "tree_rules": "|--- Avg Grade <= 0.10\n|   |--- Avg Grade <= -0.43\n|   |   |--- Avg Grade <= -2.14\n|   |   |   |--- Avg Grade <= -2.84\n|   |   |   |   |--- class: 0\n|   |   |   |--- Avg Grade >  -2.84\n|   |   |   |   |--- Difficulty <= -1.22\n|   |   |   |   |   |--- class: 0\n|   |   |   |   |--- Difficulty >  -1.22\n|   |   |   |   |   |--- Difficulty <= -0.23\n|   |   |   |   |   |   |--- class: 1\n|   |   |   |   |   |--- Difficulty >  -0.23\n|   |   |   |   |   |   |--- class: 0\n|   |   |--- Avg Grade >  -2.14\n|   |   |   |--- Difficulty <= 0.76\n|   |   |   |   |--- Avg Grade <= -1.11\n|   |   |   |   |   |--- GPA <= -0.28\n|   |   |   |   |   |   |--- Credits <= 0.11\n|   |   |   |   |   |   |   |--- Difficulty <= -0.23\n|   |   |   |   |   |   |   |   |--- class: 0\n|   |   |   |   |   |   |   |--- Difficulty >  -0.23\n|   |   |   |   |   |   |   |   |--- class: 0\n|   |   |   |   |   |   |--- Credits >  0.11\n|   |   |   |   |   |   |   |--- GPA <= -0.90\n|   |   |   |   |   |   |   |   |--- class: 0\n|   |   |   |   |   |   |   |--- GPA >  -0.90\n|   |   |   |   |   |   |   |   |--- class: 1\n|   |   |   |   |   |--- GPA >  -0.28\n|   |   |   |   |   |   |--- Difficulty <= -0.23\n|   |   |   |   |   |   |   |--- Difficulty <= -1.22\n|   |   |   |   |   |   |   |   |--- class: 1\n|   |   |   |   |   |   |   |--- Difficulty >  -1.22\n|   |   |   |   |   |   |   |   |--- class: 0\n|   |   |   |   |   |   |--- Difficulty >  -0.23\n|   |   |   |   |   |   |   |--- Avg Grade <= -1.19\n|   |   |   |   |   |   |   |   |--- class: 1\n|   |   |   |   |   |   |   |--- Avg Grade >  -1.19\n|   |   |   |   |   |   |   |   |--- class: 0\n|   |   |   |   |--- Avg Grade >  -1.11\n|   |   |   |   |   |--- Avg Grade <= -0.46\n|   |   |   |   |   |   |--- Avg Grade <= -0.83\n|   |   |   |   |   |   |   |--- GPA <= -0.19\n|   |   |   |   |   |   |   |   |--- class: 0\n|   |   |   |   |   |   |   |--- GPA >  -0.19\n|   |   |   |   |   |   |   |   |--- class: 0\n|   |   |   |   |   |   |--- Avg Grade >  -0.83\n|   |   |   |   |   |"
+  },
+  "random_forest": {
+    "n_estimators": 150,
+    "feature_importances": [
+      0.3201762518297469,
+      0.1530709742155764,
+      0.04187779651931589,
+      0.04569660478263304,
+      0.43917837265272774
+    ],
+    "max_depth": 12
+  },
+  "adaboost": {
+    "n_estimators": 100,
+    "learning_rate": 0.1
+  }
+}
